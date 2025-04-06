@@ -1,0 +1,3 @@
+# From Firebog (Updated daily)
+https://raw.githubusercontent.com/Firebog/Trackers/master/domains.txt
+https://mirror1.malwaredomains.com/files/domains.txt
