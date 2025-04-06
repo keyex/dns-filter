@@ -1,0 +1,7 @@
+#cloud-config
+packages:
+  - docker.io
+runcmd:
+  - docker run -d --name pihole -p 53:53/tcp -p 53:53/udp -p 80:80 -e TZ=UTC -v pihole:/etc/pihole -v dnsmasq:/etc/dnsmasq.d --restart=unless-stopped pihole/pihole:latest
+  - docker exec pihole bash -c "echo 'https://raw.githubusercontent.com/Firebog/Trackers/master/domains.txt' > /etc/pihole/adlists.list"
+  - docker exec pihole pihole updateGravity
